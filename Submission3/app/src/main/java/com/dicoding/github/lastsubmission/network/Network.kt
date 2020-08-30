@@ -1,5 +1,6 @@
 package com.dicoding.github.lastsubmission.network
 
+import com.dicoding.github.lastsubmission.BuildConfig
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -20,7 +21,7 @@ object Network{
     }
 
     private fun okHttpClient(): OkHttpClient {
-        return  OkHttpClient.Builder()
+        return OkHttpClient.Builder()
             .retryOnConnectionFailure(true)
             .addInterceptor(createLoggingInterceptor())
             .pingInterval(30, TimeUnit.SECONDS)

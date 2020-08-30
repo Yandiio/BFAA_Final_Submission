@@ -1,4 +1,4 @@
-package com.dicoding.github.lastsubmission.di
+package com.dicoding.github.lastsubmission.di.module
 
 import com.dicoding.github.lastsubmission.ui.main.MainActivity
 import dagger.Module

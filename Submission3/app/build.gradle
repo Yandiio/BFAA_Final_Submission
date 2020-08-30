@@ -82,12 +82,18 @@ android {
         //Library EditText
         implementation "com.ndroid:cool-view:$cool_search_view"
 
+        //room
+        implementation "androidx.room:room-runtime:$room_version"
+        implementation "androidx.room:room-ktx:$room_version"
+        kapt "androidx.room:room-compiler:$room_version"
+
         //dagger2
         implementation "com.google.dagger:dagger:$dagger_version"
         implementation "com.google.dagger:dagger-android:$dagger_version"
         implementation "com.google.dagger:dagger-android-support:$dagger_version"
-        kapt "com.google.dagger:dagger-android-processor:$dagger_version"
         kapt "com.google.dagger:dagger-compiler:$dagger_version"
+        kapt "com.google.dagger:dagger-android-processor:$dagger_version"
+
 
         //kotlin coroutine adapter
         implementation "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:$kotlin_coroutine_adapter"
