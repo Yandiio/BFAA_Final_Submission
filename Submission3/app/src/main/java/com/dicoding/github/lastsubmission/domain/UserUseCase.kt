@@ -22,9 +22,20 @@ class UserUseCase @Inject constructor(
         }
     }
 
-//    suspend fun getUserDetail(username: String) : ResultState<UserDetails> {
+    suspend fun getUserDetail(username: String) : ResultState<UserDetails> {
+        return safeApiCall {
+            val response = userRepository.getDetailuserAPI(username)
+            try {
+                ResultState.Success(response.body())
+            }catch (e: Exception) {
+                ResultState.Error(e.localizedMessage, response.code())
+            }
+        }
+    }
+
+//    suspend fun getFollowers(username: String) : ResultState<UserDetails> {
 //        return safeApiCall {
-//            val response = userRepository.getDetailuserAPI(username)
+//
 //        }
 //    }
 }

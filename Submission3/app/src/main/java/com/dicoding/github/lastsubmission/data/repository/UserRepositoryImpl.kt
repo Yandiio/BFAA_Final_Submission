@@ -3,9 +3,7 @@ package com.dicoding.github.lastsubmission.data.repository
 import com.dicoding.github.lastsubmission.data.db.UserDetails
 import com.dicoding.github.lastsubmission.data.db.dao.UserFavoriteDao
 import com.dicoding.github.lastsubmission.data.db.entity.UserFavorite
-import com.dicoding.github.lastsubmission.data.entity.SearchUserResponse
-import com.dicoding.github.lastsubmission.data.entity.UserFollowers
-import com.dicoding.github.lastsubmission.data.entity.UserFollowing
+import com.dicoding.github.lastsubmission.data.entity.*
 import com.dicoding.github.lastsubmission.data.network.NetworkService
 import retrofit2.Response
 import javax.inject.Inject

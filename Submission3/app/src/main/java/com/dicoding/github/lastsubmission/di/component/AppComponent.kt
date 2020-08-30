@@ -15,15 +15,17 @@ import javax.inject.Singleton
         ActivityBuilderModule::class,
         AndroidSupportInjectionModule::class,
         RoomModule::class,
-        ViewModule::class,
+        ViewModelModule::class,
         DataModule::class,
         UseCaseModule::class,
-        RepositoryModule::class
+        RepositoryModule::class,
+        FragmentModule::class
     ]
 
 )
 
-interface AppComponent : AndroidInjector<BaseApplication> {
+interface AppComponent : AndroidInjector<BaseApplication>{
+
     @Component.Builder
     interface Builder {
         @BindsInstance

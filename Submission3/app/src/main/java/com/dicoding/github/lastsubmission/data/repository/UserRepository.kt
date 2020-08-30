@@ -2,9 +2,7 @@ package com.dicoding.github.lastsubmission.data.repository
 
 import com.dicoding.github.lastsubmission.data.db.UserDetails
 import com.dicoding.github.lastsubmission.data.db.entity.UserFavorite
-import com.dicoding.github.lastsubmission.data.entity.SearchUserResponse
-import com.dicoding.github.lastsubmission.data.entity.UserFollowers
-import com.dicoding.github.lastsubmission.data.entity.UserFollowing
+import com.dicoding.github.lastsubmission.data.entity.*
 import retrofit2.Response
 
 interface UserRepository {

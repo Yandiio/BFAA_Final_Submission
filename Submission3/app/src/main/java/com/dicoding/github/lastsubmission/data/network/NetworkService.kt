@@ -1,10 +1,7 @@
 package com.dicoding.github.lastsubmission.data.network
 
 import com.dicoding.github.lastsubmission.data.db.UserDetails
-import com.dicoding.github.lastsubmission.data.entity.SearchUserResponse
-import com.dicoding.github.lastsubmission.data.entity.UserFollowers
-import com.dicoding.github.lastsubmission.data.entity.UserFollowersResponseItem
-import com.dicoding.github.lastsubmission.data.entity.UserFollowing
+import com.dicoding.github.lastsubmission.data.entity.*
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Headers

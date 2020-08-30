@@ -1,5 +1,6 @@
 package com.dicoding.github.lastsubmission.di.module
 
+import android.app.Application
 import android.content.Context
 import androidx.room.Room
 import com.dicoding.github.lastsubmission.data.db.AppDatabase
@@ -15,9 +16,9 @@ class RoomModule {
 
     @Singleton
     @Provides
-    fun provideAppDatabase(context: Context): AppDatabase {
+    fun provideAppDatabase(app: Application): AppDatabase {
         return Room.databaseBuilder(
-            context.applicationContext,
+            app,
             AppDatabase::class.java,
             mDatabase
         ).build()
