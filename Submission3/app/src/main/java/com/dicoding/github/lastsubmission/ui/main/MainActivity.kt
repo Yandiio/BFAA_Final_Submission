@@ -26,6 +26,8 @@ class MainActivity : BaseActivity() {
         MainAdapter(applicationContext)
     }
 
+    private var username: String? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -72,12 +74,12 @@ class MainActivity : BaseActivity() {
                     items.clear()
                     viewModel.getUserFromApi(query)
                     search_view.clearFocus()
-//                    setIllustration(false)
+                    setIllustration(false)
                 }
 
                 if (query.isEmpty()) {
                     search_view.clearFocus()
-//                    setIllustration(true)
+                    setIllustration(true)
                 }
 
                 return true
@@ -95,7 +97,7 @@ class MainActivity : BaseActivity() {
             override fun onClose(): Boolean {
                 items.clear()
                 mainAdapter.clearItems()
-//                setIllustration(true)
+                setIllustration(true)
                 return true
             }
 
@@ -108,18 +110,24 @@ class MainActivity : BaseActivity() {
         mainAdapter.setItems(items)
     }
 
+
     private fun handleStateLoading(loading: LoaderState) {
         if (loading is LoaderState.showLoading) {
-//            setIllustration(false)
+            baseLoading.setVisible()
+            setIllustration(false)
             recycler_view.setGONE()
         } else {
+            baseLoading.setGONE()
+            setIllustration(false)
             recycler_view.setVisible()
         }
     }
 
     private fun setIllustration(status: Boolean) {
         if (status) {
-
+            base_empty.setVisible()
+        } else {
+            base_empty.setGONE()
         }
     }
 }

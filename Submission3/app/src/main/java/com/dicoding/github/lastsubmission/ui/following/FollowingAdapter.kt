@@ -1,4 +1,4 @@
-package com.dicoding.github.lastsubmission.ui.followers
+package com.dicoding.github.lastsubmission.ui.following
 
 import android.content.Context
 import android.content.Intent
@@ -8,18 +8,18 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.dicoding.github.lastsubmission.R
-import com.dicoding.github.lastsubmission.data.entity.UserFollowersResponseItem
+import com.dicoding.github.lastsubmission.data.entity.UserFollowingResponseItem
 import com.dicoding.github.lastsubmission.ui.details.UserDetailActivity
+import com.dicoding.github.lastsubmission.ui.details.UserDetailActivity.Companion.USERNAME_KEY
 import kotlinx.android.synthetic.main.item_row_user.view.*
 
-class FollowersAdapter(private var context: Context) :
-    RecyclerView.Adapter<FollowersAdapter.ViewHolder>() {
+class FollowingAdapter(private var context: Context) : RecyclerView.Adapter<FollowingAdapter.FollowingViewHolder>() {
 
-    private var items = mutableListOf<UserFollowersResponseItem>()
+    private var items = mutableListOf<UserFollowingResponseItem>()
 
-
-    inner class ViewHolder(private var viewGroup: View) : RecyclerView.ViewHolder(viewGroup) {
-        fun bind(data: UserFollowersResponseItem) {
+    inner class FollowingViewHolder(itemView: View) :
+        RecyclerView.ViewHolder(itemView) {
+        fun bind(data: UserFollowingResponseItem) {
             with(itemView) {
                 Glide.with(context)
                     .load(data.avatarUrl)
@@ -28,9 +28,10 @@ class FollowersAdapter(private var context: Context) :
                     .into(img_view_user)
 
                 txt_username.text = data.login
+
                 itemView.setOnClickListener {
                     val intent = Intent(itemView.context, UserDetailActivity::class.java).apply {
-                        putExtra(UserDetailActivity.USERNAME_KEY, data.login)
+                        putExtra(USERNAME_KEY, data.login)
                     }.also {
                         itemView.context.startActivity(it)
                     }
@@ -39,19 +40,13 @@ class FollowersAdapter(private var context: Context) :
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FollowersAdapter.ViewHolder {
-        return ViewHolder(LayoutInflater.from(context).inflate(R.layout.item_row_user, parent, false))
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FollowingViewHolder {
+        return FollowingViewHolder(LayoutInflater.from(context).inflate(R.layout.item_row_user, parent, false))
     }
 
-    override fun onBindViewHolder(holder: FollowersAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: FollowingViewHolder, position: Int) {
         holder.bind(items[position])
     }
 
     override fun getItemCount(): Int = items.size
-
-    private fun setItems(data: MutableList<UserFollowersResponseItem>) {
-        this.items = data
-        notifyDataSetChanged()
-    }
-
 }

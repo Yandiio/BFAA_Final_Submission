@@ -41,6 +41,7 @@
 
 
     <androidx.core.widget.NestedScrollView
+        android:id="@+id/nested_scroll"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fitsSystemWindows="true">
@@ -79,6 +80,15 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.core.widget.NestedScrollView>
+
+    <include
+        android:id="@+id/base_empty"
+        layout="@layout/base_empty_data"
+        android:visibility="invisible"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_anchor="@id/nested_scroll"
+        app:layout_anchorGravity="center"/>
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
