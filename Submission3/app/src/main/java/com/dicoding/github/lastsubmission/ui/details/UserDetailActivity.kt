@@ -1,26 +1,32 @@
 package com.dicoding.github.lastsubmission.ui.details
 
+import android.content.Intent
 import android.os.Bundle
+import android.provider.Settings
 import android.view.Menu
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.dicoding.github.lastsubmission.R
+import com.dicoding.github.lastsubmission.core.base.BaseActivity
 import com.dicoding.github.lastsubmission.core.state.LoaderState
 import com.dicoding.github.lastsubmission.core.util.setGONE
 import com.dicoding.github.lastsubmission.core.util.setVisible
 import com.dicoding.github.lastsubmission.data.db.UserDetails
+import com.dicoding.github.lastsubmission.ui.favorite.FavoriteActivity
+import com.dicoding.github.lastsubmission.ui.settings.SettingsActivity
 import com.dicoding.github.lastsubmission.ui.viewpager.ViewPagerAdapter
 import kotlinx.android.synthetic.main.activity_user_detail.*
 import javax.inject.Inject
 
-class UserDetailActivity : AppCompatActivity() {
+class UserDetailActivity : BaseActivity() {
 
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
 
-    lateinit var viewModel: UserDetailViewModel
+    private lateinit var viewModel: UserDetailViewModel
 
     private var userDetail: UserDetails? = null
 
@@ -69,7 +75,32 @@ class UserDetailActivity : AppCompatActivity() {
         tabs.setupWithViewPager(viewPager)
     }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.item_menu, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == R.id.menu_alarm) {
+            val intent = Intent(this, SettingsActivity::class.java).also {
+                startActivity(it)
+            }
+        }
+
+        if (item.itemId == R.id.menu_language) {
+            val intent = Intent(Settings.ACTION_LOCALE_SETTINGS).also {
+                startActivity(it)
+            }
+        }
+
+        if (item.itemId == R.id.menu_favorite) {
+            val intent = Intent(this, FavoriteActivity::class.java).also {
+                startActivity(it)
+            }
+        }
+
+        return super.onOptionsItemSelected(item)
+    }
 
 
     private fun handlekeyIntent() {
@@ -79,6 +110,7 @@ class UserDetailActivity : AppCompatActivity() {
     private fun initViewModels() {
         viewModel = ViewModelProvider(this, viewModelFactory)[UserDetailViewModel::class.java]
     }
+
 
 
 

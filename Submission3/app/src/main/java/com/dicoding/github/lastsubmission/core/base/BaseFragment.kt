@@ -1,4 +1,4 @@
-package com.dicoding.github.lastsubmission.core
+package com.dicoding.github.lastsubmission.core.base
 
 import dagger.android.support.DaggerFragment
 

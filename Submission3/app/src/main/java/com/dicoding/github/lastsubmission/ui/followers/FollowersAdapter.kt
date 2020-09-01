@@ -12,13 +12,13 @@ import com.dicoding.github.lastsubmission.data.entity.UserFollowersResponseItem
 import com.dicoding.github.lastsubmission.ui.details.UserDetailActivity
 import kotlinx.android.synthetic.main.item_row_user.view.*
 
-class FollowersAdapter(private var context: Context) :
+class FollowersAdapter(val context: Context) :
     RecyclerView.Adapter<FollowersAdapter.ViewHolder>() {
 
     private var items = mutableListOf<UserFollowersResponseItem>()
 
 
-    inner class ViewHolder(private var viewGroup: View) : RecyclerView.ViewHolder(viewGroup) {
+    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(data: UserFollowersResponseItem) {
             with(itemView) {
                 Glide.with(context)
@@ -49,7 +49,7 @@ class FollowersAdapter(private var context: Context) :
 
     override fun getItemCount(): Int = items.size
 
-    private fun setItems(data: MutableList<UserFollowersResponseItem>) {
+    fun setItems(data: MutableList<UserFollowersResponseItem>) {
         this.items = data
         notifyDataSetChanged()
     }

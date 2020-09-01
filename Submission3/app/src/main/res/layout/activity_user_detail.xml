@@ -31,8 +31,8 @@
                     android:layout_width="115dp"
                     android:layout_height="115dp"
                     android:layout_marginTop="20dp"
-                    android:src="@drawable/ic_user"
                     android:contentDescription="@string/app_name"
+                    android:src="@drawable/ic_user"
                     android:transitionName="image"
                     tools:targetApi="lollipop" />
 
@@ -87,7 +87,7 @@
                                 android:layout_width="20dp"
                                 android:layout_height="20dp"
                                 android:layout_marginBottom="2dp"
-                                app:srcCompat="@drawable/ic_follower"/>
+                                app:srcCompat="@drawable/ic_follower" />
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -120,7 +120,7 @@
                                 android:layout_width="21dp"
                                 android:layout_height="21dp"
                                 android:layout_marginBottom="2dp"
-                                app:srcCompat="@drawable/ic_follow"/>
+                                app:srcCompat="@drawable/ic_follow" />
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -152,7 +152,7 @@
                                 android:layout_width="20dp"
                                 android:layout_height="20dp"
                                 android:layout_marginBottom="2dp"
-                                app:srcCompat="@drawable/ic_repository"/>
+                                app:srcCompat="@drawable/ic_repository" />
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -185,9 +185,7 @@
             android:id="@+id/tabs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:tabBackground="@drawable/tab_layout_selector"
             app:tabIndicatorColor="@color/colorWhite"
-            app:tabSelectedTextColor="@color/colorPrimary"
             app:tabTextColor="@color/colorWhite" />
 
     </com.google.android.material.appbar.AppBarLayout>
@@ -205,6 +203,7 @@
         android:layout_gravity="end|bottom"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
+        android:background="@color/colorAccent"
         android:src="@drawable/ic_baseline_favorite_border_24" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

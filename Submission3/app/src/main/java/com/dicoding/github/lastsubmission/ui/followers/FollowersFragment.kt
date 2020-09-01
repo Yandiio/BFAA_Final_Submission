@@ -1,8 +1,6 @@
 package com.dicoding.github.lastsubmission.ui.followers
 
-import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,13 +8,14 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.dicoding.github.lastsubmission.R
-import com.dicoding.github.lastsubmission.core.BaseFragment
+import com.dicoding.github.lastsubmission.core.base.BaseFragment
 import com.dicoding.github.lastsubmission.core.state.LoaderState
 import com.dicoding.github.lastsubmission.core.util.setGONE
 import com.dicoding.github.lastsubmission.core.util.setVisible
 import com.dicoding.github.lastsubmission.data.entity.UserFollowersResponseItem
 import com.dicoding.github.lastsubmission.ui.details.UserDetailActivity
 import kotlinx.android.synthetic.main.followers_fragment.*
+import kotlinx.coroutines.InternalCoroutinesApi
 import javax.inject.Inject
 
 class FollowersFragment : BaseFragment() {
@@ -26,7 +25,7 @@ class FollowersFragment : BaseFragment() {
 
     private lateinit var viewModel: FollowersViewModel
 
-    private var lists = mutableListOf<FollowersFragment>()
+    private var lists = mutableListOf<UserFollowersResponseItem>()
 
     private val followersAdapter: FollowersAdapter by lazy {
         FollowersAdapter(requireContext())
@@ -39,12 +38,8 @@ class FollowersFragment : BaseFragment() {
         return inflater.inflate(R.layout.followers_fragment, container, false)
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(FollowersViewModel::class.java)
-        // TODO: Use the ViewModel
-    }
 
+    @InternalCoroutinesApi
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initViewModel()
@@ -54,15 +49,14 @@ class FollowersFragment : BaseFragment() {
     }
 
     private fun handleUser() {
-        val activity  = activity as UserDetailActivity
-        val username : String? = activity.getUsername()
-        if (username != null) {
-            viewModel.getUserFollowers(username)
-        }
+        val activity = activity as UserDetailActivity
+        val username: String? = activity.getUsername()
+        viewModel.getUserFollowers(username!!)
     }
 
     private fun initRecycler() {
-        recycler_view.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+        recycler_view.layoutManager =
+            LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         recycler_view.adapter = followersAdapter
     }
 
@@ -76,14 +70,24 @@ class FollowersFragment : BaseFragment() {
         })
 
         viewModel.resultUserFollowers.observe(viewLifecycleOwner, Observer {
-            handleUserFollowing(it)
+            handleUserFollower(it)
         })
     }
 
-    private fun handleUserFollowing(data: List<UserFollowersResponseItem>?) {
-        if (data?.isEmpty()!!) {
+    private fun handleUserFollower(data: List<UserFollowersResponseItem>) {
+        handleEmptyFollower(data)
+        lists.clear()
+        lists.addAll(data)
+        followersAdapter.setItems(data = lists)
+    }
+
+    private fun handleEmptyFollower(data: List<UserFollowersResponseItem>) {
+        if (data.isEmpty()) {
             empty_base.setVisible()
             recycler_view.setGONE()
+        } else {
+            empty_base.setGONE()
+            recycler_view.setVisible()
         }
     }
 

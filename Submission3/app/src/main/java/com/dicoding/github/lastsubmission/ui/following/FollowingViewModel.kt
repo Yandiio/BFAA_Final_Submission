@@ -9,15 +9,15 @@ import com.dicoding.github.lastsubmission.core.util.Coroutine
 import com.dicoding.github.lastsubmission.data.entity.UserFollowing
 import com.dicoding.github.lastsubmission.data.entity.UserFollowingResponseItem
 import com.dicoding.github.lastsubmission.domain.UserUseCase
+import javax.inject.Inject
 
-class FollowingViewModel(private var userUseCase: UserUseCase) : ViewModel() {
+class FollowingViewModel @Inject constructor(private var userUseCase: UserUseCase) : ViewModel() {
     private val _state = MutableLiveData<LoaderState>()
     val state: LiveData<LoaderState>
         get() = _state
 
     private val _error = MutableLiveData<String>()
 
-    private val _networkError = MutableLiveData<Boolean>()
 
     private val _resultUserFollowing = MutableLiveData<List<UserFollowingResponseItem>>()
     val resultUserFollowing: LiveData<List<UserFollowingResponseItem>>
@@ -31,6 +31,9 @@ class FollowingViewModel(private var userUseCase: UserUseCase) : ViewModel() {
             when(result) {
                 is ResultState.Success -> {
                     _resultUserFollowing.postValue(result.data)
+                }
+                is ResultState.Error -> {
+                    _error.postValue(result.error)
                 }
             }
         }

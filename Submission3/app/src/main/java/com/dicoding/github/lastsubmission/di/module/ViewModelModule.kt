@@ -33,10 +33,10 @@ abstract class ViewModelModule {
     @ViewModelKey(FollowersViewModel::class)
     internal abstract fun bindUserFollowersViewModel(viewModel : FollowersViewModel) : ViewModel
 
-//    @Binds
-//    @IntoMap
-//    @ViewModelKey(FollowingViewModel::class)
-//    internal abstract fun bindUserFollowingViewModel(viewModel: FollowingViewModel) : ViewModel
+    @Binds
+    @IntoMap
+    @ViewModelKey(FollowingViewModel::class)
+    internal abstract fun bindUserFollowingViewModel(viewModel: FollowingViewModel) : ViewModel
 
 
 }

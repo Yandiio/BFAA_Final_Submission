@@ -13,7 +13,7 @@ import com.dicoding.github.lastsubmission.ui.details.UserDetailActivity
 import com.dicoding.github.lastsubmission.ui.details.UserDetailActivity.Companion.USERNAME_KEY
 import kotlinx.android.synthetic.main.item_row_user.view.*
 
-class FollowingAdapter(private var context: Context) : RecyclerView.Adapter<FollowingAdapter.FollowingViewHolder>() {
+class FollowingAdapter(val context: Context) : RecyclerView.Adapter<FollowingAdapter.FollowingViewHolder>() {
 
     private var items = mutableListOf<UserFollowingResponseItem>()
 
@@ -49,4 +49,9 @@ class FollowingAdapter(private var context: Context) : RecyclerView.Adapter<Foll
     }
 
     override fun getItemCount(): Int = items.size
+
+    fun setData(lists: MutableList<UserFollowingResponseItem>) {
+        this.items = lists
+        notifyDataSetChanged()
+    }
 }

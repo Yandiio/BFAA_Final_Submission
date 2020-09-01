@@ -1,4 +1,4 @@
-package com.dicoding.github.lastsubmission.network
+package com.dicoding.github.lastsubmission.data.network
 
 import com.dicoding.github.lastsubmission.BuildConfig
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory

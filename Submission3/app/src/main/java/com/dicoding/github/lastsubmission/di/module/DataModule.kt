@@ -2,7 +2,7 @@ package com.dicoding.github.lastsubmission.di.module
 
 import com.dicoding.github.lastsubmission.data.network.NetworkService
 import com.dicoding.github.lastsubmission.di.DataScope
-import com.dicoding.github.lastsubmission.network.Network
+import com.dicoding.github.lastsubmission.data.network.Network
 import dagger.Module
 import dagger.Provides
 

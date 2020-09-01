@@ -6,7 +6,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.dicoding.github.lastsubmission.R
-import com.dicoding.github.lastsubmission.core.BaseActivity
+import com.dicoding.github.lastsubmission.core.base.BaseActivity
 import com.dicoding.github.lastsubmission.core.state.LoaderState
 import com.dicoding.github.lastsubmission.core.util.setGONE
 import com.dicoding.github.lastsubmission.core.util.setVisible
@@ -18,7 +18,8 @@ class MainActivity : BaseActivity() {
 
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
-    lateinit var viewModel: MainViewModel
+
+    private lateinit var viewModel: MainViewModel
 
     private val items = mutableListOf<UserSearchResponseItem>()
 

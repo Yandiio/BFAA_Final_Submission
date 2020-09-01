@@ -14,10 +14,11 @@ import com.dicoding.github.lastsubmission.data.entity.UserSearchResponseItem
 import com.dicoding.github.lastsubmission.ui.details.UserDetailActivity
 import kotlinx.android.synthetic.main.item_row_user.view.*
 
-class MainAdapter(private val mContext: Context) : RecyclerView.Adapter<MainAdapter.MainViewHolder>() {
+class MainAdapter(val mContext: Context) : RecyclerView.Adapter<MainAdapter.MainViewHolder>() {
 
     private var items = mutableListOf<UserSearchResponseItem>()
-    lateinit var mainActivity: MainActivity
+
+    private lateinit var mainActivity: MainActivity
 
     inner class MainViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(data: UserSearchResponseItem, activity: MainActivity) {
@@ -25,7 +26,7 @@ class MainAdapter(private val mContext: Context) : RecyclerView.Adapter<MainAdap
                 Glide.with(mContext)
                     .load(data.avatarUrl!!)
                     .apply(com.bumptech.glide.request.RequestOptions().circleCrop())
-                    .placeholder(com.dicoding.github.lastsubmission.R.drawable.ic_user)
+                    .placeholder(R.drawable.ic_user)
                     .into(img_view_user)
 
                 txt_username.text = data.login
