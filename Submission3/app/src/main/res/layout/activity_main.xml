@@ -84,7 +84,7 @@
     <include
         android:id="@+id/base_empty"
         layout="@layout/base_empty_data"
-        android:visibility="invisible"
+        android:visibility="visible"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_anchor="@id/nested_scroll"
