@@ -9,7 +9,6 @@ import androidx.core.app.ActivityOptionsCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.dicoding.github.lastsubmission.R
-import com.dicoding.github.lastsubmission.data.db.UserDetails
 import com.dicoding.github.lastsubmission.data.entity.UserSearchResponseItem
 import com.dicoding.github.lastsubmission.ui.details.UserDetailActivity
 import kotlinx.android.synthetic.main.item_row_user.view.*

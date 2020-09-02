@@ -12,13 +12,21 @@ import com.dicoding.github.lastsubmission.domain.UserUseCase
 import javax.inject.Inject
 
 class FollowingViewModel @Inject constructor(private var userUseCase: UserUseCase) : ViewModel() {
+
+    /**
+    * LoaderState */
     private val _state = MutableLiveData<LoaderState>()
     val state: LiveData<LoaderState>
         get() = _state
 
+    /**
+    * Error State
+    */
     private val _error = MutableLiveData<String>()
 
-
+    /**
+    * Fetch data from api
+    */
     private val _resultUserFollowing = MutableLiveData<List<UserFollowingResponseItem>>()
     val resultUserFollowing: LiveData<List<UserFollowingResponseItem>>
         get() = _resultUserFollowing
@@ -38,4 +46,8 @@ class FollowingViewModel @Inject constructor(private var userUseCase: UserUseCas
             }
         }
     }
+
+    /**
+    *  Local
+    */
 }

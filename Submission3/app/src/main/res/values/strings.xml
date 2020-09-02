@@ -16,4 +16,9 @@
     <string name="language">Language</string>
     <string name="notification">Notification</string>
     <string name="no_data_available">No Data Available</string>
+    <string name="repository">s% Repository</string>
+    <string name="company">Company</string>
+    <string name="location">Location</string>
+    <string name="no_company">No Company</string>
+    <string name="user_added_success">User Added Successfuly</string>
 </resources>

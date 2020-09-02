@@ -1,6 +1,6 @@
 package com.dicoding.github.lastsubmission.data.repository
 
-import com.dicoding.github.lastsubmission.data.db.UserDetails
+import com.dicoding.github.lastsubmission.data.entity.UserDetails
 import com.dicoding.github.lastsubmission.data.db.entity.UserFavorite
 import com.dicoding.github.lastsubmission.data.entity.*
 import retrofit2.Response

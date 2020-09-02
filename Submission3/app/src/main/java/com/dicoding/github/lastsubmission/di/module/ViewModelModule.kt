@@ -3,6 +3,7 @@ package com.dicoding.github.lastsubmission.di.module
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.dicoding.github.lastsubmission.ui.details.UserDetailViewModel
+import com.dicoding.github.lastsubmission.ui.favorite.FavoriteViewModel
 import com.dicoding.github.lastsubmission.ui.followers.FollowersViewModel
 import com.dicoding.github.lastsubmission.ui.following.FollowingViewModel
 import com.dicoding.github.lastsubmission.ui.main.MainViewModel
@@ -37,6 +38,11 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(FollowingViewModel::class)
     internal abstract fun bindUserFollowingViewModel(viewModel: FollowingViewModel) : ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(FavoriteViewModel::class)
+    internal abstract fun bindUserFavoriteViewModel(viewModel: FavoriteViewModel) : ViewModel
 
 
 }

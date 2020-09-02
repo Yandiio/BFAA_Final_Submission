@@ -1,9 +1,6 @@
 package com.dicoding.github.lastsubmission.data.db.dao
 
-import androidx.room.Dao
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.Query
+import androidx.room.*
 import com.dicoding.github.lastsubmission.data.db.entity.UserFavorite
 
 @Dao
@@ -14,7 +11,7 @@ interface UserFavoriteDao {
     @Query("SELECT * FROM user_favorite_table WHERE username = :userName")
     suspend fun getFavByUSername(userName: String) : List<UserFavorite>
 
-    @Insert
+    @Insert(onConflict =  OnConflictStrategy.REPLACE)
     suspend fun addUserToFav(user: UserFavorite)
 
     @Delete

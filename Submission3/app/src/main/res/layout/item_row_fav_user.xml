@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/card_layout_background"
+    android:padding="10dp"
+    android:layout_marginStart="9dp"
+    android:layout_marginEnd="9dp"
+    android:layout_marginBottom="10dp"
+    android:layout_marginTop="10dp"
+    android:elevation="10dp">
+
+    <ImageView
+        android:id="@+id/img_fav_user"
+        android:layout_width="76dp"
+        android:layout_height="76dp"
+        android:src="@drawable/ic_user"
+        android:scaleType="fitCenter"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/txt_fav_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:layout_marginStart="20dp"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:text="@string/user"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/img_fav_user"/>
+
+    <TextView
+        android:id="@+id/txt_fav_bio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:layout_marginStart="20dp"
+        android:textSize="13sp"
+        android:text="@string/bio_data"
+        app:layout_constraintTop_toBottomOf="@id/txt_fav_username"
+        app:layout_constraintLeft_toRightOf="@id/img_fav_user"/>
+
+    <TextView
+        android:id="@+id/txt_fav_following"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginStart="20dp"
+        android:textSize="14sp"
+        android:textStyle="normal"
+        android:text="@string/following"
+        app:layout_constraintTop_toBottomOf="@id/txt_fav_bio"
+        app:layout_constraintLeft_toRightOf="@id/img_fav_user"/>
+
+    <TextView
+        android:id="@+id/txt_fav_followers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="37dp"
+        android:textSize="14sp"
+        android:textStyle="normal"
+        android:text="@string/follower"
+        app:layout_constraintTop_toBottomOf="@id/txt_fav_bio"
+        app:layout_constraintLeft_toRightOf="@id/txt_fav_following"/>
+
+    <TextView
+        android:id="@+id/txt_fav_repository"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginStart="20dp"
+        android:textSize="14sp"
+        android:textStyle="normal"
+        android:text="@string/repository"
+        app:layout_constraintTop_toBottomOf="@id/txt_fav_following"
+        app:layout_constraintLeft_toRightOf="@id/img_fav_user"/>
+
+    <TextView
+        android:id="@+id/txt_fav_company"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="20dp"
+        android:textSize="14sp"
+        android:textStyle="normal"
+        android:text="@string/company"
+        android:drawablePadding="5dp"
+        app:layout_constraintTop_toBottomOf="@id/txt_fav_repository"
+        app:layout_constraintLeft_toRightOf="@id/img_fav_user"
+        app:drawableStartCompat="@drawable/ic_baseline_work_24" />
+
+    <TextView
+        android:id="@+id/txt_fav_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="20dp"
+        android:textSize="14sp"
+        android:drawablePadding="5dp"
+        android:drawableLeft="@drawable/ic_baseline_location_on_24"
+        android:textStyle="normal"
+        android:text="@string/location"
+        app:layout_constraintTop_toBottomOf="@id/txt_fav_repository"
+        app:layout_constraintLeft_toRightOf="@id/txt_fav_company"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

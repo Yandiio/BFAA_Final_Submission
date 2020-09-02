@@ -1,4 +1,4 @@
-package com.dicoding.github.lastsubmission.data.db
+package com.dicoding.github.lastsubmission.data.entity
 
 import com.google.gson.annotations.SerializedName
 
@@ -18,11 +18,12 @@ data class UserDetails (
     @SerializedName("followers_url")
     val followersUrl: String?,
     @SerializedName("followers")
-    val followers: String?,
+    val followers: Int?,
     @SerializedName("following")
-    val following: String?,
+    val following: Int?,
     @SerializedName("following_url")
-    val followingUrl: String?, @SerializedName("gists_url")
+    val followingUrl: String?,
+    @SerializedName("gists_url")
     val gistsUrl: String?,
     @SerializedName("gravatar_id")
     val gravatarId: String?,

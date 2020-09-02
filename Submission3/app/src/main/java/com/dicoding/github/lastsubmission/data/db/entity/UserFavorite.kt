@@ -21,5 +21,7 @@ data class UserFavorite(
     @ColumnInfo(name = "followers_url") val followersUrl: String?,
     @ColumnInfo(name = "followers") val followers: Int?,
     @ColumnInfo(name = "following") val following: Int?,
-    @ColumnInfo(name = "location") val location: String?
+    @ColumnInfo(name = "location") val location: String?,
+    @ColumnInfo(name = "company") val company: String?
+
 ) : Parcelable
