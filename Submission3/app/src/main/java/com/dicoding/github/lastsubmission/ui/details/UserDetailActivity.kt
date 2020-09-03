@@ -86,6 +86,7 @@ class UserDetailActivity : BaseActivity() {
     private fun getDataFromResource() {
         username?.let {
             viewModel.getUserDetail(it)
+            viewModel.getDataUserByUsername(it)
         }
     }
 

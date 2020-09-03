@@ -1,6 +1,7 @@
 package com.dicoding.github.lastsubmission.ui.favorite
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.dicoding.github.lastsubmission.R
 import com.dicoding.github.lastsubmission.data.db.entity.UserFavorite
-import kotlinx.android.synthetic.main.activity_user_detail.view.*
+import com.dicoding.github.lastsubmission.ui.details.UserDetailActivity
 import kotlinx.android.synthetic.main.item_row_fav_user.view.*
 
 class FavoriteAdapter(val context: Context): RecyclerView.Adapter<FavoriteAdapter.FavoriteViewHolder>() {
@@ -23,12 +24,22 @@ class FavoriteAdapter(val context: Context): RecyclerView.Adapter<FavoriteAdapte
                     .circleCrop()
                     .into(img_fav_user)
 
-                txt_fav_bio.text = user.bio
-                txt_fav_location.text = user.location
-                txt_fav_following.text = user.following.toString()
-                txt_fav_followers.text  = user.followers.toString()
-                txt_fav_repository.text = user.publicRepos.toString()
-                txt_fav_location.text = user.company ?: context.getString(R.string.no_company)
+                txt_fav_username.text = user.username
+                txt_fav_bio.text = user.bio ?: context.getString(R.string.empty)
+                txt_fav_location.text = user.location ?: context.getString(R.string.empty)
+                txt_title_fav_following.text = user.following.toString()
+                txt_title_fav_followers.text  = user.followers.toString()
+                txt_title_fav_repository.text = user.publicRepos.toString()
+                txt_fav_company.text = user.company ?: context.getString(R.string.no_company)
+
+                itemView.setOnClickListener {
+                    val intent = Intent(itemView.context, UserDetailActivity::class.java).apply {
+                        putExtra(UserDetailActivity.USERNAME_KEY, user.username)
+                        setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                    }.also {
+                        itemView.context.startActivity(it)
+                    }
+                }
 
             }
         }

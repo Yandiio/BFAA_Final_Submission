@@ -45,17 +45,40 @@
         app:layout_constraintLeft_toRightOf="@id/img_fav_user"/>
 
     <TextView
-        android:id="@+id/txt_fav_following"
+        android:id="@+id/txt_title_fav_following"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:layout_marginStart="20dp"
         android:textSize="14sp"
         android:textStyle="normal"
-        android:text="@string/following"
+        android:text="@string/repo_placeholder"
         app:layout_constraintTop_toBottomOf="@id/txt_fav_bio"
         app:layout_constraintLeft_toRightOf="@id/img_fav_user"/>
 
+    <TextView
+        android:id="@+id/txt_fav_following"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginStart="13dp"
+        android:textSize="14sp"
+        android:textStyle="normal"
+        android:text="@string/following"
+        app:layout_constraintTop_toBottomOf="@id/txt_fav_bio"
+        app:layout_constraintLeft_toRightOf="@id/txt_title_fav_following"/>
+
+    <TextView
+        android:id="@+id/txt_title_fav_followers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginStart="20dp"
+        android:textSize="14sp"
+        android:textStyle="normal"
+        android:text="@string/repo_placeholder"
+        app:layout_constraintTop_toBottomOf="@id/txt_fav_bio"
+        app:layout_constraintLeft_toRightOf="@id/txt_fav_following"/>
     <TextView
         android:id="@+id/txt_fav_followers"
         android:layout_width="wrap_content"
@@ -69,16 +92,28 @@
         app:layout_constraintLeft_toRightOf="@id/txt_fav_following"/>
 
     <TextView
-        android:id="@+id/txt_fav_repository"
+        android:id="@+id/txt_title_fav_repository"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:layout_marginStart="20dp"
         android:textSize="14sp"
         android:textStyle="normal"
-        android:text="@string/repository"
+        android:text="@string/repo_placeholder"
         app:layout_constraintTop_toBottomOf="@id/txt_fav_following"
         app:layout_constraintLeft_toRightOf="@id/img_fav_user"/>
+
+    <TextView
+        android:id="@+id/txt_fav_repository"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginStart="10dp"
+        android:textSize="14sp"
+        android:textStyle="normal"
+        android:text="@string/repository"
+        app:layout_constraintTop_toBottomOf="@id/txt_fav_following"
+        app:layout_constraintLeft_toRightOf="@id/txt_title_fav_repository"/>
 
     <TextView
         android:id="@+id/txt_fav_company"
@@ -105,8 +140,8 @@
         android:drawableLeft="@drawable/ic_baseline_location_on_24"
         android:textStyle="normal"
         android:text="@string/location"
-        app:layout_constraintTop_toBottomOf="@id/txt_fav_repository"
-        app:layout_constraintLeft_toRightOf="@id/txt_fav_company"/>
+        app:layout_constraintTop_toBottomOf="@id/txt_fav_company"
+        app:layout_constraintLeft_toRightOf="@id/img_fav_user"/>
 
 
 

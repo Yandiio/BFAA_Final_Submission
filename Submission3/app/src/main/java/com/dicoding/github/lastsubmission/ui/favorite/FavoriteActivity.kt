@@ -25,7 +25,7 @@ class FavoriteActivity : BaseActivity() {
 
     private lateinit var viewModel: FavoriteViewModel
 
-    private var listUser = mutableListOf<UserFavorite>()
+    private val listUser = mutableListOf<UserFavorite>()
 
     private val userFavoriteAdapter : FavoriteAdapter by lazy {
         FavoriteAdapter(applicationContext)
@@ -79,8 +79,8 @@ class FavoriteActivity : BaseActivity() {
             recycler_view.setGONE()
             base_empty_fav.setVisible()
         } else {
-            recycler_view.setGONE()
-            base_empty_fav.setVisible()
+            recycler_view.setVisible()
+            base_empty_fav.setGONE()
         }
     }
 
@@ -89,8 +89,13 @@ class FavoriteActivity : BaseActivity() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.item_menu, menu)
+        menuInflater.inflate(R.menu.menu_alarm, menu)
         return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        viewModel.fetchAllUserFavorite()
     }
 
     private fun initToolbar() {

@@ -73,7 +73,7 @@ android {
         implementation "com.google.code.gson:gson:$gson_version"
 
 
-        //circle iamge view
+        //circle image view
         implementation "de.hdodenhof:circleimageview:$circle_image_view"
 
         //shimmer

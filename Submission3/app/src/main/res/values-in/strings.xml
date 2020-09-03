@@ -20,5 +20,7 @@
     <string name="repository">s% Repositori</string>
     <string name="company">Perusahaan</string>
     <string name="location">Lokasi</string>
-    <string name="no_company">Kosong</string>
+    <string name="no_company">null</string>
+    <string name="user_added_success">Pengguna berhasil ditambah</string>
+    <string name="empty">kosong</string>
 </resources>
