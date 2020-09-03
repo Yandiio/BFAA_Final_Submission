@@ -61,6 +61,9 @@ class UserDetailActivity : BaseActivity() {
     private fun setFavUser() {
         if (favoriteAcive) {
             userFavoriteEntity.let {
+                if (it != null) {
+                    viewModel.deleteUserDataFromDb(it)
+                }
             }
         } else {
             val userFavorite = userDetail?.login?.let {
@@ -167,6 +170,15 @@ class UserDetailActivity : BaseActivity() {
               }
                 Toast.makeText(this, R.string.user_added_success, Toast.LENGTH_SHORT).show()
             }
+        })
+
+        viewModel.deleteDataFromDb.observe(this, Observer {
+            if (it) {
+                username?.let {
+                    viewModel.getDataUserByUsername(it)
+                }
+            }
+            Toast.makeText(this, R.string.deleted_success, Toast.LENGTH_SHORT).show()
         })
     }
 

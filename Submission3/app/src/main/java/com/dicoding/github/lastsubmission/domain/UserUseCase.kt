@@ -83,9 +83,13 @@ class UserUseCase @Inject constructor(
         }
     }
 
-    suspend fun deleteDataFromDb(userFav: UserFavorite) {
+    suspend fun deleteDataFromDb(userFav: UserFavorite?) {
         return try {
-            userRepository.deleteUser(userFav)
+            if (userFav != null) {
+                userRepository.deleteUser(userFav)
+            } else {
+
+            }
         } catch (e: Exception) {
             throw Exception(e)
         }

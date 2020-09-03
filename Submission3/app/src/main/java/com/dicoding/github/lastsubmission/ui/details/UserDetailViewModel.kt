@@ -6,10 +6,9 @@ import androidx.lifecycle.ViewModel
 import com.dicoding.github.lastsubmission.core.state.LoaderState
 import com.dicoding.github.lastsubmission.core.state.ResultState
 import com.dicoding.github.lastsubmission.core.util.Coroutine
-import com.dicoding.github.lastsubmission.data.entity.UserDetails
 import com.dicoding.github.lastsubmission.data.db.entity.UserFavorite
+import com.dicoding.github.lastsubmission.data.entity.UserDetails
 import com.dicoding.github.lastsubmission.domain.UserUseCase
-import java.lang.Exception
 import javax.inject.Inject
 
 class UserDetailViewModel @Inject constructor(
@@ -43,11 +42,11 @@ class UserDetailViewModel @Inject constructor(
         get() = _resultUserDetail
 
     /**
-     * UserDetail from DB
+     * User Detail from DB
      */
 
     private val _resultUserDetailFromDB = MutableLiveData<List<UserFavorite>>()
-    val resultUserDetailFromDb : LiveData<List<UserFavorite>>
+    val resultUserDetailFromDb: LiveData<List<UserFavorite>>
         get() = _resultUserDetailFromDB
 
     /**
@@ -56,6 +55,10 @@ class UserDetailViewModel @Inject constructor(
     private val _resultAddToDb = MutableLiveData<Boolean>()
     val resultAddToDb: LiveData<Boolean>
         get() = _resultAddToDb
+
+    private val _deleteDataFromDb = MutableLiveData<Boolean>()
+    val deleteDataFromDb: LiveData<Boolean>
+        get() = _deleteDataFromDb
 
 
     /**
@@ -81,9 +84,8 @@ class UserDetailViewModel @Inject constructor(
     }
 
     /**
-     * From Database
-     * */
-
+     * Add data Into Database
+     */
     fun addDataToUserFav(userFavorite: UserFavorite) {
         Coroutine.main {
             try {
@@ -95,11 +97,27 @@ class UserDetailViewModel @Inject constructor(
         }
     }
 
+    /**
+     * Delete data from db
+     */
+
+    fun deleteUserDataFromDb(userFavorite: UserFavorite) {
+        Coroutine.main {
+            try {
+                userUseCase.deleteDataFromDb(userFavorite)
+                _deleteDataFromDb.postValue(true)
+            } catch (e: Exception) {
+                __error.postValue(e.localizedMessage)
+            }
+
+        }
+    }
+
 
     fun getDataUserByUsername(username: String) {
         Coroutine.main {
             val result = userUseCase.getDataByUsername(username)
-            when(result) {
+            when (result) {
                 is ResultState.Success -> _resultUserDetailFromDB.postValue(result.data)
                 is ResultState.Error -> __error.postValue(result.error)
             }

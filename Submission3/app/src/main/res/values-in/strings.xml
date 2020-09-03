@@ -17,10 +17,12 @@
     <string name="language">Bahasa</string>
     <string name="notification">Notifikasi</string>
     <string name="no_data_available">Data Tidak Tersedia</string>
-    <string name="repository">s% Repositori</string>
+    <string name="repository">Repositori</string>
     <string name="company">Perusahaan</string>
     <string name="location">Lokasi</string>
     <string name="no_company">null</string>
     <string name="user_added_success">Pengguna berhasil ditambah</string>
     <string name="empty">kosong</string>
+    <string name="repo_placeholder">0</string>
+    <string name="deleted_success">User Deleted Succesfully</string>
 </resources>

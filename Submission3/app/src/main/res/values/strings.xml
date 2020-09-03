@@ -23,4 +23,5 @@
     <string name="user_added_success">User Added Successfuly</string>
     <string name="empty">Empty</string>
     <string name="repo_placeholder">0</string>
+    <string name="deleted_success">User Deleted Succesfully</string>
 </resources>
