@@ -3,6 +3,7 @@ package com.dicoding.github.lastsubmission.ui.settings
 import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.preference.PreferenceFragmentCompat
+import androidx.preference.PreferenceManager
 import androidx.preference.SwitchPreferenceCompat
 import com.dicoding.github.lastsubmission.R
 import com.dicoding.github.lastsubmission.ui.alarm.AlarmReceiver
@@ -48,6 +49,22 @@ class SettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSharedP
             if (sharedPreferences != null) {
                 reminderPreferences.isChecked = sharedPreferences.getBoolean(reminder, false)
             }
+        }
+
+        val state : Boolean = PreferenceManager.getDefaultSharedPreferences(context).getBoolean(reminder, false)
+
+        setReminder(state)
+    }
+
+    private fun setReminder(state: Boolean) {
+        if (state) {
+            context?.let {
+                alarmReceiver.setRepeat(it)
+            }
+        } else {
+             context?.let {
+                 alarmReceiver.cancelAlarm(it)
+             }
         }
     }
 }
