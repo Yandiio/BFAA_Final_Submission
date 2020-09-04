@@ -11,9 +11,6 @@ import retrofit2.http.Query
 
 interface NetworkService {
 
-//    val API_KEY
-//        get() = BuildConfig.
-
     /**
      * Endpoint Search Users
      */
@@ -26,7 +23,7 @@ interface NetworkService {
      * Endpoint Detail of User
      */
     @GET("users/{username}")
-    @Headers("Authorization:  ")
+    @Headers("Authorization: $API_KEY ")
     suspend fun getDetailUser(
         @Path("username") username: String
     ): Response<UserDetails>
@@ -46,4 +43,8 @@ interface NetworkService {
     suspend fun getFollowingUser(
         @Path("username") username: String
     ): Response<UserFollowing>
+
+    companion object {
+        const val API_KEY = BuildConfig.API_KEY
+    }
 }
