@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Github Users</string>
+    <string name="developer_name">Muhammad Yandi Fenanda | 2020</string>
+    <string name="follower">Pengikut</string>
+    <string name="following">Mengikuti</string>
+    <string name="following_placeholder">100</string>
+    <string name="follower_placeholder">100</string>
+    <string name="bio_data">Biodata</string>
+    <string name="user">Pengguna</string>
+    <string name="name">Foo</string>
+    <string name="settings">Pengaturan</string>
+    <string name="alarm_canceled">Alarm telah dibatalkan</string>
+    <string name="reminder">Pengingat</string>
+    <string name="reminder_9">Pengingat pada pukul 9:00 A.M</string>
+    <string name="favorite">Favorit</string>
+    <string name="language">Bahasa</string>
+    <string name="notification">Notifikasi</string>
+    <string name="no_data_available">Data Tidak Tersedia</string>
+    <string name="repository">Repositori</string>
+    <string name="company">Perusahaan</string>
+    <string name="location">Lokasi</string>
+    <string name="no_company">null</string>
+    <string name="user_added_success">Pengguna berhasil ditambah</string>
+    <string name="empty">kosong</string>
+    <string name="repo_placeholder">0</string>
+    <string name="deleted_success">User Deleted Succesfully</string>
+</resources>

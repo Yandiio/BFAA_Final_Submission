@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Github Users</string>
+    <string name="developer_name">Muhammad Yandi Fenanda | 2020</string>
+    <string name="follower">Followers</string>
+    <string name="following">Following</string>
+    <string name="following_placeholder">100</string>
+    <string name="follower_placeholder">100</string>
+    <string name="bio_data">Bio Data</string>
+    <string name="user">User</string>
+    <string name="name">Foo</string>
+    <string name="settings">Settings</string>
+    <string name="alarm_canceled">Alarm Has Been Canceled</string>
+    <string name="reminder">Reminder</string>
+    <string name="reminder_9">Reminder at 9:00 A.M</string>
+    <string name="favorite">Favorite</string>
+    <string name="language">Language</string>
+    <string name="notification">Notification</string>
+    <string name="no_data_available">No Data Available</string>
+    <string name="repository">Repository</string>
+    <string name="company">Company</string>
+    <string name="location">Location</string>
+    <string name="no_company">null</string>
+    <string name="user_added_success">User Added Successfuly</string>
+    <string name="empty">Empty</string>
+    <string name="repo_placeholder">0</string>
+    <string name="deleted_success">User Deleted Succesfully</string>
+</resources>
