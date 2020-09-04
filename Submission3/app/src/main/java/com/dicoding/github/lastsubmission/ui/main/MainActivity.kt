@@ -2,6 +2,7 @@ package com.dicoding.github.lastsubmission.ui.main
 
 import android.content.Intent
 import android.os.Bundle
+import android.provider.Settings
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.SearchView
@@ -14,6 +15,8 @@ import com.dicoding.github.lastsubmission.core.state.LoaderState
 import com.dicoding.github.lastsubmission.core.util.setGONE
 import com.dicoding.github.lastsubmission.core.util.setVisible
 import com.dicoding.github.lastsubmission.data.entity.UserSearchResponseItem
+import com.dicoding.github.lastsubmission.ui.favorite.FavoriteActivity
+import com.dicoding.github.lastsubmission.ui.settings.SettingsActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
 
@@ -41,13 +44,33 @@ class MainActivity : BaseActivity() {
         initViewModel()
         initRecycleView()
         initObserver()
+
+        supportActionBar?.elevation = 0f
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.item_menu, menu)
         return super.onCreateOptionsMenu(menu)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == R.id.menu_favorite) {
+           Intent(this, FavoriteActivity::class.java).also {
+                startActivity(it)
+            }
+        }
+
+        if (item.itemId == R.id.menu_alarm) {
+            Intent(this, SettingsActivity::class.java).also {
+                startActivity(it)
+            }
+        }
+
+        if (item.itemId == R.id.menu_language) {
+            Intent(Settings.ACTION_LOCALE_SETTINGS).also {
+                startActivity(it)
+            }
+        }
         return super.onOptionsItemSelected(item)
     }
 

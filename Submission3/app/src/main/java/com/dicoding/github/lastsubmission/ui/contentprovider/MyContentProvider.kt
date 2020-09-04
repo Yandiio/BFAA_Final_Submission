@@ -1,4 +1,4 @@
-package com.dicoding.github.lastsubmission.ui.contentprov
+package com.dicoding.github.lastsubmission.ui.contentprovider
 
 import android.content.ContentProvider
 import android.content.ContentValues
@@ -11,16 +11,15 @@ import javax.inject.Inject
 
 class MyContentProvider : ContentProvider() {
 
+    @Inject
+    lateinit var  userFavoriteDao : UserFavoriteDao
+
     companion object {
         private const val USER = 1
         private const val AUTHORITY = "com.dicoding.github.lastsubmission.provider"
         private val sUriMatcher = UriMatcher(UriMatcher.NO_MATCH).apply {
             addURI(AUTHORITY, "user_favorite_table", USER)
         }
-
-        @Inject
-        lateinit var  userFavoriteDao : UserFavoriteDao
-
     }
 
     override fun delete(uri: Uri, selection: String?, selectionArgs: Array<String>?): Int {
@@ -44,7 +43,7 @@ class MyContentProvider : ContentProvider() {
         uri: Uri, projection: Array<String>?, selection: String?,
         selectionArgs: Array<String>?, sortOrder: String?
     ): Cursor? {
-        return when(sUriMatcher.match(uri)) {
+        return when (sUriMatcher.match(uri)) {
             USER -> userFavoriteDao.getCursorAllFavData()
             else -> null
         }

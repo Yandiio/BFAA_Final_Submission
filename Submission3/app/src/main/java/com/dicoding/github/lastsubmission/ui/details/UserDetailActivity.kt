@@ -14,8 +14,8 @@ import com.dicoding.github.lastsubmission.core.base.BaseActivity
 import com.dicoding.github.lastsubmission.core.state.LoaderState
 import com.dicoding.github.lastsubmission.core.util.setGONE
 import com.dicoding.github.lastsubmission.core.util.setVisible
-import com.dicoding.github.lastsubmission.data.entity.UserDetails
 import com.dicoding.github.lastsubmission.data.db.entity.UserFavorite
+import com.dicoding.github.lastsubmission.data.entity.UserDetails
 import com.dicoding.github.lastsubmission.ui.favorite.FavoriteActivity
 import com.dicoding.github.lastsubmission.ui.settings.SettingsActivity
 import com.dicoding.github.lastsubmission.ui.viewpager.ViewPagerAdapter
@@ -120,19 +120,19 @@ class UserDetailActivity : BaseActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == R.id.menu_alarm) {
-            val intent = Intent(this, SettingsActivity::class.java).also {
+            Intent(this, SettingsActivity::class.java).also {
                 startActivity(it)
             }
         }
 
         if (item.itemId == R.id.menu_language) {
-            val intent = Intent(Settings.ACTION_LOCALE_SETTINGS).also {
+            Intent(Settings.ACTION_LOCALE_SETTINGS).also {
                 startActivity(it)
             }
         }
 
         if (item.itemId == R.id.menu_favorite) {
-            val intent = Intent(this, FavoriteActivity::class.java).also {
+            Intent(this, FavoriteActivity::class.java).also {
                 startActivity(it)
             }
         }
@@ -165,9 +165,9 @@ class UserDetailActivity : BaseActivity() {
 
         viewModel.resultAddToDb.observe(this, Observer {
             if (it) {
-              username?.let {
-                  viewModel.getDataUserByUsername(it)
-              }
+                username?.let {
+                    viewModel.getDataUserByUsername(it)
+                }
                 Toast.makeText(this, R.string.user_added_success, Toast.LENGTH_SHORT).show()
             }
         })

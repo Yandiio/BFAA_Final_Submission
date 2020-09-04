@@ -45,8 +45,8 @@
             tools:ignore="ExportedReceived" />
 
         <provider
-            android:name=".ui.contentprov.MyContentProvider"
-            android:authorities="provider"
+            android:name=".ui.contentprovider.MyContentProvider"
+            android:authorities="com.dicoding.github.lastsubmission.provider"
             android:enabled="true"
             android:exported="true"
             android:readPermission="com.dicoding.github.lastsubmission.provider.READ_DATABASE"

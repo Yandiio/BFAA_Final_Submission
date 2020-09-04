@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Github Users</string>
+    <string name="app_name">consumerapp</string>
     <string name="developer_name">Muhammad Yandi Fenanda | 2020</string>
     <string name="follower">Followers</string>
     <string name="following">Following</string>
@@ -23,5 +23,5 @@
     <string name="user_added_success">User Added Successfuly</string>
     <string name="empty">Empty</string>
     <string name="repo_placeholder">0</string>
-    <string name="deleted_success">User Deleted Succesfully</string>
+    <string name="deleted_success">User Deleted Successfully</string>
 </resources>

@@ -24,5 +24,5 @@
     <string name="user_added_success">Pengguna berhasil ditambah</string>
     <string name="empty">kosong</string>
     <string name="repo_placeholder">0</string>
-    <string name="deleted_success">User Deleted Succesfully</string>
+    <string name="deleted_success">Pengguna berhasil dihapus</string>
 </resources>

@@ -1,5 +1,6 @@
 package com.dicoding.github.lastsubmission.data.network
 
+import com.dicoding.github.lastsubmission.BuildConfig
 import com.dicoding.github.lastsubmission.data.entity.UserDetails
 import com.dicoding.github.lastsubmission.data.entity.*
 import retrofit2.Response
@@ -9,6 +10,9 @@ import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface NetworkService {
+
+//    val API_KEY
+//        get() = BuildConfig.
 
     /**
      * Endpoint Search Users
@@ -22,7 +26,7 @@ interface NetworkService {
      * Endpoint Detail of User
      */
     @GET("users/{username}")
-    @Headers("Authorization: token 4dda8eb575a5df4bbb627e11e0563afcdb3ab95a ")
+    @Headers("Authorization:  ")
     suspend fun getDetailUser(
         @Path("username") username: String
     ): Response<UserDetails>

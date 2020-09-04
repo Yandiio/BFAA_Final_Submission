@@ -33,9 +33,9 @@ class FavoriteAdapter(val context: Context): RecyclerView.Adapter<FavoriteAdapte
                 txt_fav_company.text = user.company ?: context.getString(R.string.no_company)
 
                 itemView.setOnClickListener {
-                    val intent = Intent(itemView.context, UserDetailActivity::class.java).apply {
+                   Intent(itemView.context, UserDetailActivity::class.java).apply {
                         putExtra(UserDetailActivity.USERNAME_KEY, user.username)
-                        setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                        flags = Intent.FLAG_ACTIVITY_NEW_TASK
                     }.also {
                         itemView.context.startActivity(it)
                     }

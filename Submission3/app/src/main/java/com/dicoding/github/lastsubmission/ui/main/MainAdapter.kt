@@ -36,9 +36,9 @@ class MainAdapter(val mContext: Context) : RecyclerView.Adapter<MainAdapter.Main
                     activity, itemView.img_view_user, "image"
                 )
 
-                val intent = Intent(itemView.context, UserDetailActivity::class.java).apply {
+                Intent(itemView.context, UserDetailActivity::class.java).apply {
                     putExtra(UserDetailActivity.USERNAME_KEY, data.login)
-                    setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                    flags = Intent.FLAG_ACTIVITY_NEW_TASK
                 }.also {
                     itemView.context.startActivity(it)
                 }

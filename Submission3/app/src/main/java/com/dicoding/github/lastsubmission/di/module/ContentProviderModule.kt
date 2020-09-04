@@ -1,6 +1,6 @@
 package com.dicoding.github.lastsubmission.di.module
 
-import com.dicoding.github.lastsubmission.ui.contentprov.MyContentProvider
+import com.dicoding.github.lastsubmission.ui.contentprovider.MyContentProvider
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 

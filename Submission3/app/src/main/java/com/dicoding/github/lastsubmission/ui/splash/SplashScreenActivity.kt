@@ -12,17 +12,13 @@ class SplashScreenActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash_screen)
 
-//        loadAnim()
         moveIntent()
     }
 
-    private fun loadAnim() {
-        TODO("Not yet implemented")
-    }
 
     private fun moveIntent() {
         Handler().postDelayed({
-            val intent = Intent(this@SplashScreenActivity, MainActivity::class.java).also {
+            Intent(this@SplashScreenActivity, MainActivity::class.java).also {
                 startActivity(it)
             }
         }, 3000)

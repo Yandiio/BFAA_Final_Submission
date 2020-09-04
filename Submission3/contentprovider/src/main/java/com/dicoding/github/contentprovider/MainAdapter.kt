@@ -20,10 +20,10 @@ class MainAdapter(private val mContext: Context) : RecyclerView.Adapter<MainAdap
                     .circleCrop()
                     .into(img_fav_user)
 
-                txt_fav_username.text = userFavorite.company
+                txt_fav_username.text = userFavorite.username
                 txt_title_fav_followers.text = userFavorite.followers
                 txt_title_fav_following.text = userFavorite.following
-                txt_fav_repository.text = userFavorite.public_repos ?: mContext.getString(R.string.empty)
+                txt_title_fav_repository.text = userFavorite.public_repos ?: mContext.getString(R.string.empty)
                 txt_fav_location.text = userFavorite.location ?: mContext.getString(R.string.empty)
                 txt_fav_company.text = userFavorite.company ?: mContext.getString(R.string.no_company)
             }

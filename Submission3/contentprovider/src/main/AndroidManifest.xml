@@ -3,8 +3,8 @@
     package="com.dicoding.github.contentprovider">
     
     <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="com.dicoding.githubuser.lastsubmission.READ_DATABASE"/>
-    <uses-permission android:name="com.dicoding.githubuser.lastsubmission.WRITE_DATABASE"/>
+    <uses-permission android:name="com.dicoding.github.lastsubmission.provider.READ_DATABASE"/>
+    <uses-permission android:name="com.dicoding.github.lastsubmission.provider.WRITE_DATABASE"/>
 
     <application
         android:allowBackup="true"

@@ -1,8 +1,6 @@
 package com.dicoding.github.lastsubmission.ui.following
 
-import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,15 +10,11 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.dicoding.github.lastsubmission.R
 import com.dicoding.github.lastsubmission.core.base.BaseFragment
 import com.dicoding.github.lastsubmission.core.state.LoaderState
-import com.dicoding.github.lastsubmission.core.state.ResultState
 import com.dicoding.github.lastsubmission.core.util.setGONE
 import com.dicoding.github.lastsubmission.core.util.setVisible
 import com.dicoding.github.lastsubmission.data.entity.UserFollowingResponseItem
 import com.dicoding.github.lastsubmission.ui.details.UserDetailActivity
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.following_fragment.*
-import kotlinx.android.synthetic.main.following_fragment.baseLoading
-import kotlinx.android.synthetic.main.following_fragment.recycler_view
 import javax.inject.Inject
 
 class FollowingFragment : BaseFragment() {

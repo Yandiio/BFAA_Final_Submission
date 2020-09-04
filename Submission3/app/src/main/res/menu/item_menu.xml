@@ -6,17 +6,13 @@
         android:icon="@drawable/ic_baseline_favorite_24"
         android:orderInCategory="200"
         android:title="@string/favorite"
-        app:showAsAction="ifRoom" />
+        app:showAsAction="always" />
     <item
         android:id="@+id/menu_language"
-        android:icon="@drawable/ic_baseline_language_24"
-        android:orderInCategory="200"
         android:title="@string/language"
-        app:showAsAction="ifRoom" />
+        app:showAsAction="collapseActionView" />
     <item
         android:id="@+id/menu_alarm"
-        android:icon="@drawable/ic_baseline_notifications_none_24"
-        android:orderInCategory="200"
         android:title="@string/notification"
-        app:showAsAction="ifRoom" />
+        app:showAsAction="collapseActionView" />
 </menu>

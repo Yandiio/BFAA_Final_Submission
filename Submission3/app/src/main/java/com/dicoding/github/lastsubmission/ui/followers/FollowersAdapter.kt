@@ -29,7 +29,7 @@ class FollowersAdapter(val context: Context) :
 
                 txt_username.text = data.login
                 itemView.setOnClickListener {
-                    val intent = Intent(itemView.context, UserDetailActivity::class.java).apply {
+                    Intent(itemView.context, UserDetailActivity::class.java).apply {
                         putExtra(UserDetailActivity.USERNAME_KEY, data.login)
                     }.also {
                         itemView.context.startActivity(it)

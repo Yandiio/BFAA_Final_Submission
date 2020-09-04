@@ -42,7 +42,7 @@ class FavoriteActivity : BaseActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == R.id.menu_alarm) {
-            val intent = Intent(this, SettingsActivity::class.java ).also {
+            Intent(this, SettingsActivity::class.java ).also {
                 startActivity(it)
             }
         }

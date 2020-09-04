@@ -30,7 +30,7 @@ class FollowingAdapter(val context: Context) : RecyclerView.Adapter<FollowingAda
                 txt_username.text = data.login
 
                 itemView.setOnClickListener {
-                    val intent = Intent(itemView.context, UserDetailActivity::class.java).apply {
+                   Intent(itemView.context, UserDetailActivity::class.java).apply {
                         putExtra(USERNAME_KEY, data.login)
                     }.also {
                         itemView.context.startActivity(it)
