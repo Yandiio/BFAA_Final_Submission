@@ -1,5 +1,6 @@
 package com.dicoding.github.lastsubmission.data.db.dao
 
+import android.database.Cursor
 import androidx.room.*
 import com.dicoding.github.lastsubmission.data.db.entity.UserFavorite
 
@@ -16,4 +17,11 @@ interface UserFavoriteDao {
 
     @Delete
     suspend fun deleteUserFromFav(user: UserFavorite)
+
+    /**
+    *  Cursor data for content provider
+    */
+
+    @Query("SELECT * FROM user_favorite_table")
+    fun getCursorAllFavData() : Cursor
 }

@@ -48,7 +48,9 @@
             android:name=".ui.contentprov.MyContentProvider"
             android:authorities="provider"
             android:enabled="true"
-            android:exported="true" />
+            android:exported="true"
+            android:readPermission="com.dicoding.github.lastsubmission.provider.READ_DATABASE"
+            android:writePermission="com.dicoding.github.lastsubmission.provider.WRITE_DATABASE"/>
     </application>
 
 </manifest>
