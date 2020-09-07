@@ -72,6 +72,7 @@ class FavoriteActivity : BaseActivity() {
         listUser.clear()
         listUser.addAll(list)
         userFavoriteAdapter.setItems(listUser)
+        userFavoriteAdapter.notifyDataSetChanged()
     }
 
     private fun handleWhenDataEmpty(user: List<UserFavorite>) {
