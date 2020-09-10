@@ -34,8 +34,6 @@ class MainActivity : BaseActivity() {
         MainAdapter(applicationContext)
     }
 
-    private var username: String? = null
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
