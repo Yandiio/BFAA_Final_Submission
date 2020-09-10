@@ -25,8 +25,7 @@ class FavoriteViewModel @Inject constructor(
 
     fun fetchAllUserFavorite() {
         Coroutine.main {
-            val result = userUseCase.fetchUserFavorites()
-            when (result) {
+            when (val result = userUseCase.fetchUserFavorites()) {
                 is ResultState.Success -> _resultUserDb.postValue(result.data)
                 is ResultState.Error -> __error.postValue(result.error)
             }
